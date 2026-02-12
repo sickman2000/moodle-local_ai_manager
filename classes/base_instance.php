@@ -615,6 +615,7 @@ class base_instance {
         if (empty($data['name'])) {
             $errors['name'] = get_string('formvalidation_editinstance_name', 'local_ai_manager');
         }
+        /** removed to enable local non https ai provider
         if (
             !empty($data['endpoint'])
             && str_starts_with($data['endpoint'], 'http://')
@@ -622,6 +623,7 @@ class base_instance {
         ) {
             $errors['endpoint'] = get_string('formvalidation_editinstance_endpointnossl', 'local_ai_manager');
         }
+        */
         return $errors + $this->extend_validation($data, $files);
     }
 
